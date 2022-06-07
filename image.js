@@ -53,10 +53,7 @@ exports.createImage = async (apiResponse) => {
             context.fillText(`${apiResponse.temperature}°C`, 128, informationHeight + (heightDifference + iconHeight) * 2 + 36);
             buffer = canvas.toBuffer('image/jpeg');
         }
-
-        const path = `./output_1.jpeg`;
-        fs.writeFileSync(path, buffer); // TODO: Make this dynammic
-        
+ 
         resolve({
             buffer, apiResponse
         });
