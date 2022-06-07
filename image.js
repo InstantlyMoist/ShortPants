@@ -30,7 +30,8 @@ exports.createImage = async (apiResponse) => {
             context.fillStyle = color.darkColor(shortPants);
             context.fillText("Kan ik vandaag een korte \nbroek aan?", 64, 128);
     
-            const weatherImage = await loadImage(shortPants ? "./assets/yes-man.png" : "./assets/no-man.png");
+            const weatherImage = await loadImage(__dirname + "/assets/" + shortPants ? "./assets/yes-man" : "./assets/no-man");
+            //const weatherImage = await loadImage(shortPants ? "./assets/yes-man.png" : "./assets/no-man.png");
             const widthAspect = weatherImage.width > weatherImage.height;
             const desiredWidth = widthAspect ? 500 : 500 * (500 / weatherImage.height);
             const desiredHeight = widthAspect ? 500 * (desiredWidth / weatherImage.width) : 500;
