@@ -74,7 +74,7 @@ exports.createUnknownImage = async (apiResponse) => {
         context.fillStyle = "#387932";
         context.fillText("Kan ik vandaag een korte \nbroek aan?", 64, 128);
 
-        const weatherImage = await loadImage("./assets/unknown-man.png");
+        const weatherImage = await loadImage(`${__dirname}/assets/unknown-man.png`);
         const widthAspect = weatherImage.width > weatherImage.height;
         const desiredWidth = widthAspect ? 500 : 500 * (500 / weatherImage.height);
         const desiredHeight = widthAspect ? 500 * (desiredWidth / weatherImage.width) : 500;
